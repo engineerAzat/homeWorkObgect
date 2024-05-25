@@ -3,22 +3,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Book warAndPeace = new Book("Война и Мир", "Толстой Л.Н.", 1695);
-        System.out.println("warAndPeace.name = " + warAndPeace.getName());
-        System.out.println("warAndPeace.author = " + warAndPeace.getAuthor());
-        System.out.println("warAndPeace.yearOfPublication = " + warAndPeace.getYearOfPublication());
-        warAndPeace.setYearOfPublication(1696);
-        System.out.println("warAndPeace.getYearOfPublication() = " + warAndPeace.getYearOfPublication());
+        Author tolstoi = new Author("Лев", "Толстой");
+        Book warAndPeace = new Book("Война и Мир", tolstoi, 1965);
+        System.out.println("Книга - " + warAndPeace.getName());
+        System.out.println("Автор - " + warAndPeace.getAuthor().getName() + " " + warAndPeace.getAuthor().getSurname());
+        System.out.println("Год издания - " + warAndPeace.getYearOfPublication());
+        warAndPeace.setYearOfPublication(1966);
+        System.out.println("Год издания - " + warAndPeace.getYearOfPublication());
 
-        Book theAdventuresOfTomSawyer = new Book("Приключения Тома Сойера", "Марк Твейн", 1876);
-        System.out.println("theAdventuresOfTomSawyer.name = " + theAdventuresOfTomSawyer.getName());
-        System.out.println("theAdventuresOfTomSawyer.author = " + theAdventuresOfTomSawyer.getAuthor());
-        System.out.println("theAdventuresOfTomSawyer.yearOfPublication = " + theAdventuresOfTomSawyer.getYearOfPublication());
 
-        Book leComteDeMonteCristo = new Book("Граф Монте-Кристо", "Дюма Александр", 1844);
-        System.out.println("leComteDeMonteCristo.name = " + leComteDeMonteCristo.getName());
-        System.out.println("leComteDeMonteCristo.author = " + leComteDeMonteCristo.getAuthor());
-        System.out.println("leComteDeMonteCristo.yearOfPublication = " + leComteDeMonteCristo.getYearOfPublication());
+        Author tven = new Author("Марк", "Твейн");
+        Book theAdventuresOfTomSawyer = new Book("Приключение кота мотроскина", tven, 2089 );
+        System.out.println("Книга - " + theAdventuresOfTomSawyer.getName());
+        System.out.println("Автор - " + theAdventuresOfTomSawyer.getAuthor().getName() + " " + theAdventuresOfTomSawyer.getAuthor().getSurname());
+        System.out.println("Год издания - " + theAdventuresOfTomSawyer.getYearOfPublication());
+
+        Author duma = new Author("Александр", "Дюма");
+        Book leComteDeMonteCristo = new Book("Граф Монте-Кристо", tven, 1884 );
+        System.out.println("Книга - " + leComteDeMonteCristo.getName());
+        System.out.println("Автор - " + leComteDeMonteCristo.getAuthor().getName() + " " + leComteDeMonteCristo.getAuthor().getSurname());
+        System.out.println("Год издания - " + leComteDeMonteCristo.getYearOfPublication());
+
+
 
     }
 }
